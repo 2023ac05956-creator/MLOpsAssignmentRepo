@@ -1,0 +1,23 @@
+artifact_path: file:C:/Users/91958/workspace/AI_Workspace/cat-dogs-mlops/mlruns/2/models/m-641d54ec08c1469b95f0ca534e1375e4/artifacts
+flavors:
+  python_function:
+    config:
+      device: null
+    data: data
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.pytorch
+    pickle_module_name: mlflow.pytorch.pickle_module
+    python_version: 3.14.3
+  pytorch:
+    code: null
+    model_data: data
+    pytorch_version: 2.10.0+cpu
+mlflow_version: 3.10.0
+model_id: m-641d54ec08c1469b95f0ca534e1375e4
+model_size_bytes: 29576845
+model_uuid: m-641d54ec08c1469b95f0ca534e1375e4
+prompts: null
+run_id: 4ce7a8f898d4411ba917454c3eb92a17
+utc_time_created: '2026-02-22 12:16:51.772768'
