@@ -1,146 +1,155 @@
-#Cats vs Dogs - End-to-End MLOps Pipeline
 
-##  Project Overview
+# Cats vs Dogs Classification - MLOps Project
 
-This project implements a complete end-to-end MLOps pipeline for binary
-image classification (Cats vs Dogs) designed for a pet adoption
-platform.
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.110.0-green)
+![MLflow](https://img.shields.io/badge/MLflow-2.9.2-orange)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue)
+![CI/CD](https://img.shields.io/badge/GitHub_Actions-Enabled-purple)
 
-The pipeline covers:
+---
 
--   Model development
--   Experiment tracking
--   Data & code versioning
--   Containerization
--   CI/CD automation
--   Deployment
--   Monitoring & logging
+## 🚀 Quick Start
 
-------------------------------------------------------------------------
+📁 **Main Project Directory**: `cats-dogs-mlops/`
 
-##  Dataset
+This project demonstrates a complete end-to-end MLOps pipeline for binary image classification (Cats vs Dogs) designed for a pet adoption platform.
 
-Kaggle Cats vs Dogs Dataset\
-Images resized to **224x224 RGB**\
-Data split: - 80% Training - 10% Validation - 10% Testing
+---
 
-Data augmentation applied for better generalization.
+## 👥 Contributors
 
-------------------------------------------------------------------------
+| Name | BITS ID |
+|------|---------|
+| GOBIND SAH | 2024AA05643 |
+| VISHAL SINGH | 2024AA05641 |
+| YASH VERMA | 2024AA05640 |
+| AVISHI GUPTA | 2024AA05055 |
+| ASIT SHUKLA  | 2023AC05956 |
 
-##  Tech Stack
+---
 
--   Python 3.10
--   PyTorch
--   MLflow (Experiment Tracking)
--   Git (Code Versioning)
--   DVC (Data Versioning)
--   FastAPI (Inference API)
--   Docker (Containerization)
--   GitHub Actions (CI/CD)
--   Docker Compose (Deployment)
+## 📋 Project Overview
 
-------------------------------------------------------------------------
+This project implements an end-to-end MLOps pipeline for classifying images of cats and dogs using deep learning. The solution includes:
 
-##  Project Structure
+- Data preprocessing and augmentation
+- CNN-based model training
+- Experiment tracking with MLflow
+- Data versioning with DVC
+- FastAPI-based REST API
+- Docker containerization
+- CI pipeline using GitHub Actions
+- Deployment using Docker Compose
+- Logging and monitoring
 
-    cats-dogs-mlops/
-    │
-    ├── data/
-    ├── models/
-    ├── src/
-    ├── app/
-    ├── tests/
-    ├── Dockerfile
-    ├── docker-compose.yml
-    ├── requirements.txt
-    ├── .github/workflows/ci.yml
-    └── README.md
+---
 
-------------------------------------------------------------------------
+## 📊 Dataset
 
-##  How to Run
+Source: Kaggle - Cats vs Dogs Dataset  
 
-##  #Install Dependencies
+- Binary image classification (Cat / Dog)
+- Images resized to 224x224 RGB
+- Data split:
+  - 80% Training
+  - 10% Validation
+  - 10% Testing
+- Data augmentation applied
 
-    pip install -r requirements.txt
+---
 
-##  #Train Model
+## 🏗️ Repository Structure
 
-    python src/train.py
+cats-dogs-mlops/
+├── data/
+├── models/
+├── src/
+├── app/
+├── tests/
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+└── README.md
 
-##  #Launch MLflow UI
+---
 
-    mlflow ui
+## 🚀 Getting Started
 
-##  #Run API Locally
+### Installation
 
-    uvicorn app.main:app --reload
+git clone <your-repo-link>
+cd cats-dogs-mlops
 
-Health Check:
+python -m venv venv
+source venv/bin/activate
 
-    http://localhost:8000/health
+pip install -r requirements.txt
+
+---
+
+## 🧠 Model Training
+
+python src/train.py
+
+mlflow ui
+
+---
+
+## 🌐 Run API Locally
+
+uvicorn app.main:app --reload
+
+Health: http://localhost:8000/health
 
 Prediction:
+curl -X POST "http://localhost:8000/predict" -F "file=@cat.jpg"
 
-    curl -X POST "http://localhost:8000/predict" -F "file=@cat.jpg"
+---
 
-------------------------------------------------------------------------
+## 🧪 Testing
 
-##  Docker Deployment
+pytest
 
-Build Image:
+---
 
-    docker build -t catsdogs-api .
+## 🐳 Docker Deployment
 
-Run Container:
+docker build -t catsdogs-api .
+docker run -p 8000:8000 catsdogs-api
 
-    docker run -p 8000:8000 catsdogs-api
+Or:
 
-Or use Docker Compose:
+docker-compose up --build
 
-    docker-compose up --build
+---
 
-------------------------------------------------------------------------
+## 🔄 CI Pipeline
 
-##  CI/CD Pipeline
+- Install dependencies
+- Run unit tests
+- Build Docker image
 
-On every push to main branch: - Install dependencies - Run unit tests
-(pytest) - Build Docker image - (Optional) Push to container registry
+---
 
-------------------------------------------------------------------------
+## 🏆 MLOps Best Practices
 
-##  Monitoring
+- Git versioning
+- DVC data tracking
+- MLflow experiment tracking
+- Automated testing
+- Docker containerization
+- CI/CD automation
+- Logging & monitoring
 
--   Request logging enabled
--   Request count tracking
--   Inference latency logging
+---
 
-------------------------------------------------------------------------
+## 📦 Submission Checklist
 
-##  Demonstration Checklist
+- Source Code
+- DVC files
+- Dockerfile
+- CI YAML
+- Trained model
+- Demo recording
 
-1.  Train model
-2.  Show MLflow experiment tracking
-3.  Run unit tests
-4.  Build Docker image
-5.  Deploy with Docker Compose
-6.  Test prediction endpoint
-
-------------------------------------------------------------------------
-
-##  Submission Contents
-
--   Source code
--   DVC configuration
--   CI/CD pipeline
--   Docker configuration
--   Trained model artifact
--   Screen recording (≤ 5 minutes)
-
-------------------------------------------------------------------------
-
-##  Author
-
-MLOps Assignment Submission\
-Binary Image Classification -- Cats vs Dogs
